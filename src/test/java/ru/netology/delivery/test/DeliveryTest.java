@@ -52,7 +52,7 @@ public class DeliveryTest {
         $("[data-test-id=replan-notification] .notification__content > button.button .button__text").shouldHave(exactText("Перепланировать"));
         $("[data-test-id=replan-notification] .notification__content > button.button").click();
 
-        $("[data-test-id=success-notification]").shouldNotBe(visible, Duration.ofMillis(500));
+        $("[data-test-id=success-notification]").shouldBe(visible, Duration.ofMillis(500));
         $("[data-test-id=success-notification] .notification__content").shouldHave(exactText("Встреча успешно запланирована на " + secondMeetingDate));
     }
 }
