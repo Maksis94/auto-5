@@ -28,9 +28,7 @@ public class DeliveryTest {
 
         $("[data-test-id=city] input").setValue(validUser.getCity());
 
-        for (int i = 0; i < 10; i++) {
-            $("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
-        }
+        $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id=date] input").setValue(firstMeetingDate);
         $("[data-test-id=name] input").setValue(validUser.getName());
         $("[data-test-id=phone] input").setValue(validUser.getPhone());
@@ -40,9 +38,7 @@ public class DeliveryTest {
         $("[data-test-id=success-notification]").shouldBe(visible, Duration.ofMillis(500));
         $("[data-test-id=success-notification] .notification__content").shouldHave(exactText("Встреча успешно запланирована на " + firstMeetingDate));
 
-        for (int i = 0; i < 10; i++) {
-            $("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
-        }
+        $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id=date] input").setValue(secondMeetingDate);
         $("form.form button.button").click();
 
